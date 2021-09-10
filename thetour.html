@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="stylesheet"
+			href="node_modules/bootstrap/dist/css/bootstrap.css"
+		/>
+		<title>The Fab Four Tour</title>
+	</head>
+	<body class="container">
+		<!--Tour Header-->
+		<div class="row">
+			<div class="col-sm-6 text-center">
+				<h2>The Fab Four: Tour Dates</h2>
+			</div>
+		</div>
+
+		<!--Table Header-->
+		<div class="row">
+			<div class="col-sm-6">
+				<table
+					id="tour-table"
+					class="table table-bordered table-hover table-striped"
+				>
+					<thead class="table-light text-center">
+						<tr>
+							<th>Date</th>
+							<th>City</th>
+							<th>Location</th>
+                            <th>Delete</th>
+						</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+
+		<!--Tour Date Entry Form-->
+		<div class="row">
+			<div class="col-sm-6">
+				<div class="card">
+					<div class="card-header">Add Tour Date</div>
+					<div class="card-body">
+						<div class="form-group mb-2">
+							<label for="date">Date</label>
+							<input type="date" id="date" class="form-control" />
+						</div>
+						<div class="form-group mb-2">
+							<label for="city">City</label>
+							<input type="text" id="city" class="form-control" />
+						</div>
+						<div class="form-group mb-2">
+							<label for="location">Location</label>
+							<input
+								type="text"
+								id="location"
+								class="form-control"
+							/>
+						</div>
+					</div>
+					<div class="card-footer">
+						<div class="row">
+							<div class="col-sm-12">
+								<button
+									type="button"
+									id="add-button"
+									class="btn btn-primary"
+								>
+									Add
+								</button>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<script src="node_modules/jquery/dist/jquery.js"></script>
+		<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.js"></script>
+	</body>
+</html>
