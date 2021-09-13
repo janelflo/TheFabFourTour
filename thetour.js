@@ -4,7 +4,7 @@ let tourDates = []; //store the entities we create, read, update, and delete
 
 //Data Structures -- pushing this class to our table
 class TourDate {
-	constructor(date, city, location, id) {
+	constructor(date, city, location) {
 		this.date = date;
 		this.city = city;
 		this.location = location;
@@ -13,7 +13,7 @@ class TourDate {
 	}
 
 	createTourDate() {
-		tourDates.push(new TourDate(this.date, this.city, this.location, this.id));
+		tourDates.push(new TourDate(this.date, this.city, this.location));
 	}
 
 	// editTourDate(id) {
@@ -74,8 +74,8 @@ class DOMManager {
 		$('.test').empty();
 		for (let tourDate of tourDates) {
 			$('#tour-table').prepend(
-				`<tr class="text-center test">
-				<td><button class="btn btn-primary" id="${id}" onclick="dom.editButton()">Edit</button></td>
+				`<tr class="text-center ${}">
+				<td><button class="btn btn-primary" id="${tourDate.id}" onclick="dom.editButton()">Edit</button></td>
 				<td>${tourDate.date}</td>
 				<td>${tourDate.city}</td>
 				<td>${tourDate.location}</td>
@@ -86,8 +86,20 @@ class DOMManager {
 		}
 	}
 
+
+
 	editButton(id) {
 		// get element by id
+		id = document.getElementById(`${tourDate.id}`);
+		console.log(id);
+		for (let i = 0; i < tourDates.length; i++) {
+			if (i == id) {'
+				<input type="date" id="new-date" class="form-control" />
+				[id].date.prepend("new-date")
+				'
+			}
+			[id].date.push("new-date").value;
+		}
 		// accept new input
 		// push new input to table
 		// let ham = this.id;
@@ -97,6 +109,14 @@ class DOMManager {
 
 	}
 
+	updateTourDate() {
+		let newDate = document.getElementById('date').value;
+		let newCity = document.getElementById('city').value;
+		let newLocation = document.getElementById('location').value;
+		let updatedTourDate = new TourDate(newDate, newCity, newLocation, id);
+			tourDates[id].splice(id, 0, updatedTourDate);
+		}
+
 	//getAllTourDates -- get all info anytime we make changes to the DOM -- Display --Richie
 	//deleteTourDate -- delete a tour by id? -- Jayme
 	//take an instance of TourDate and push to tourDates array -- Janel
@@ -105,6 +125,6 @@ class DOMManager {
 let dom = new DOMManager();
 // dom.editButton();
 dom.addButton();
-id++;
+dom.editButton();
 dom.renderTourDates();
 //
