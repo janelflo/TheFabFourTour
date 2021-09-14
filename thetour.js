@@ -103,6 +103,11 @@ class DOMManager {
 
 		for (let i = 0; i < tourDates.length; i++) {
 			if (i == id) {`
+<<<<<<< HEAD
+				<input type="date" id="new-date" class="form-control" />
+				[id].date.prepend("new-date")
+				`
+
 				<input type="date" id="new-date" class="form-control">`;
 				tourDates[id].date.prepend("new-date");
 				
@@ -125,12 +130,24 @@ class DOMManager {
 		let updatedTourDate = new TourDate(newDate, newCity, newLocation, id);
 			tourDates[id].splice(id, 0, updatedTourDate);
 		}
+	
+	deleteButton(id) {
+			alert("Are you sure you want to Delete?")
+			//this.deleteButton= id.parentElement;
+			//elementToDelete.parentNode.removeChild(elementToDelete);
+			//document.getElementById(`${id}`).deleteButton(tourDates);
+			//e.parentNode.parentNode.removeChild(e.parentNode);
+			//work on html
+			//create link to actaully delete on html than code
+		}
+	
 
 	//getAllTourDates -- get all info anytime we make changes to the DOM -- Display --Richie
 	//deleteTourDate -- delete a tour by id? -- Jayme
 	//take an instance of TourDate and push to tourDates array -- Janel
 	//updateTourDate -- get the TourDate by id to make changes -- Kristina
 }
+
 let dom = new DOMManager();
 // dom.editButton();
 dom.addButton();
